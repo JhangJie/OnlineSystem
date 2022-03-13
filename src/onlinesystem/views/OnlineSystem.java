@@ -104,9 +104,6 @@ public class OnlineSystem extends ViewPart {
 	    @Override
 	    public void run() {
         	while(!mark) {
-        		//KeyboardFocusManager.getCurrentKeyboardFocusManager().clearGlobalFocusOwner();
-        		//EventQueue.invokeLater( new Runnable() {
-        		//public void run() {
         		Display.getDefault().syncExec(new Runnable() {
         			public void run() {	
         				try {
@@ -121,15 +118,12 @@ public class OnlineSystem extends ViewPart {
         				}
         			}
         		});
-        		//}
-        		//});
         	}
 	    }
 
 	    public void start() {
 	    	if(thr == null) {
 	    		mark = false;
-	    		//SwingUtilities.invokeLater(new Thread(this,threadname));
 	    		thr  = new Thread(this,threadname);
 	    		thr.start();
 	    	}
@@ -204,18 +198,6 @@ public class OnlineSystem extends ViewPart {
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDoubleClick(MouseEvent e) {
-				//table.getColumn(0);
-				//e.getClass().toString();
-				//Point p = new Point(e.x,e.y);
-				
-				//System.out.print("getItem=" + table.getItem(10).getText() + "\n");
-				//table.getItem(0).getText();
-				
-				//table.getItem(p);
-				//System.out.print("toString=" + table.geti + "\n");
-				//System.out.print("toString=" + e.getClass().getName() + "\n");
-				//System.out.print("x=" + Integer.toString(e.x) + " y=" + Integer.toString(e.y) + "\n");
-				//e.widget.getData().toString();
 			}
 		});
 		table.getScrollbarsMode();
@@ -293,15 +275,6 @@ public class OnlineSystem extends ViewPart {
 		//System data show to table
 		sysdatashow();
 		thrNmLabel.setText(Integer.toString(thrtotal));
-		
-		/*
-		//table use enum
-		System.out.print("tableColname=" + tableColname.cpu.ordinal() + "\n");
-		
-		//table column
-		for(int i=0;i<table.getColumnCount();i++) {
-			System.out.print("Column(" + Integer.toString(i) + ")=" + table.getColumn(i).getText() + "\n");
-		}*/
 
 		createActions();
 		// Uncomment if you wish to add code to initialize the toolbar
@@ -333,6 +306,5 @@ public class OnlineSystem extends ViewPart {
 	@Override
 	public void setFocus() {
 		// Set the focus
-		//table.setFocus();
 	}
 }
